@@ -112,6 +112,8 @@ return packer.startup(function(use)
   -- Project
   use 'ahmedkhalf/project.nvim'
 
+  use 'skywind3000/asyncrun.vim'
+
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

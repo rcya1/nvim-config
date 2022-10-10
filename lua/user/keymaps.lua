@@ -75,8 +75,16 @@ keymap("n", "<A-O>", "O<Esc>", opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
--- Fix bufferline
-keymap("n", "<F12>", "<cmd>source C:\\Users\\chang\\AppData\\Local\\nvim\\lua\\user\\bufferline.lua<CR>", opts)
+-- Fix bufferline (doesn't work rn)
+keymap("n", "<F12>", ":source C:/Users/Ryan/AppData/Local/nvim/lua/user/bufferline.lua<CR>", { noremap = true, silent = false} )
+
+-- Redo keymaps
+keymap("n", "<F1>", ":source C:/Users/Ryan/AppData/Local/nvim/lua/user/keymaps.lua<CR>", { noremap = true, silent = false })
 
 -- Disable whatever the heck this does --
 keymap("n", "<C-z>", "<Nop>", opts)
+
+-- Latex stuff --
+keymap("n", "<F5>", ":! cd %:p:h && pdflatex -interaction nonstopmode -halt-on-error -file-line-error %:t<CR>", { noremap = true, silent = false })
+keymap("n", "<F6>", ":AsyncRun SumatraPDF %:r.pdf <CR>", { noremap = true, silent = true })
+
