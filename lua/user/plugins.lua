@@ -112,6 +112,8 @@ return packer.startup(function(use)
   -- Project
   use 'ahmedkhalf/project.nvim'
 
+
+  use 'NMAC427/guess-indent.nvim'
   use 'skywind3000/asyncrun.vim'
 
   -- Automatically set up your configuration after cloning packer.nvim
