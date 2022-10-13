@@ -88,3 +88,8 @@ keymap("n", "<C-z>", "<Nop>", opts)
 keymap("n", "<F5>", ":! cd %:p:h && pdflatex -interaction nonstopmode -halt-on-error -file-line-error %:t<CR>", { noremap = true, silent = false })
 keymap("n", "<F6>", ":AsyncRun SumatraPDF %:r.pdf <CR>", { noremap = true, silent = true })
 
+-- Visual movement --
+
+keymap("n", "<A-j>", "gj", opts)
+keymap("n", "<A-k>", "gk", opts)
+
