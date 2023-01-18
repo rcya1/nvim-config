@@ -51,6 +51,39 @@ return packer.startup(function(use)
   -- colorscheme
   use 'marko-cerovac/material.nvim'
 
+  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
+
+  -- Surround
+  use "tpope/vim-surround"
+  use "tpope/vim-repeat"
+
+  -- Comments
+  use "numToStr/Comment.nvim" -- Easily comment stuff 
+
+  -- Git
+  use "lewis6991/gitsigns.nvim"
+  
+  -- Treesitter
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate",
+  }
+
+  -- Nvim Tree
+  use 'kyazdani42/nvim-web-devicons'
+  use 'kyazdani42/nvim-tree.lua'
+
+  -- Bufferline / Lualine
+  use "akinsho/bufferline.nvim"
+  use "moll/vim-bbye"
+  use 'nvim-lualine/lualine.nvim'
+
+  -- Smooth scrolling
+  use 'karb94/neoscroll.nvim'
+
+  use 'NMAC427/guess-indent.nvim'
+  use 'skywind3000/asyncrun.vim'
+
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
   use "hrsh7th/cmp-buffer" -- buffer completions
@@ -62,59 +95,9 @@ return packer.startup(function(use)
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
-  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+  use "rafamadriz/friendly-snippets" -- a bunch of snippets to use use 'L3MON4D3/LuaSnip'
 
-  -- LSP
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-
-  -- Telescope
-  use "nvim-telescope/telescope.nvim"
-  use 'nvim-telescope/telescope-media-files.nvim'
-
-  -- Treesitter
-  use {
-    "nvim-treesitter/nvim-treesitter",
-    run = ":TSUpdate",
-  }
-  use "p00f/nvim-ts-rainbow"
-  use "nvim-treesitter/playground"
-
-  -- Autopairs
-  use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
-
-  -- Surround
-  use "tpope/vim-surround"
-  use "tpope/vim-repeat"
-
-  -- Comments
-  use "numToStr/Comment.nvim" -- Easily comment stuff 
-  use 'JoosepAlviste/nvim-ts-context-commentstring'
-
-  -- Git
-  use "lewis6991/gitsigns.nvim"
-
-  -- Nvim Tree
-  use 'kyazdani42/nvim-web-devicons'
-  use 'kyazdani42/nvim-tree.lua'
-
-  -- Bufferline / Lualine
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
-  use 'nvim-lualine/lualine.nvim'
-
-  -- Greeting Dashboard
-  use 'goolord/alpha-nvim'
-
-  -- Smooth scrolling
-  use 'karb94/neoscroll.nvim'
-
-  -- Project
-  use 'ahmedkhalf/project.nvim'
-
-
-  use 'NMAC427/guess-indent.nvim'
-  use 'skywind3000/asyncrun.vim'
+  use "lervag/vimtex"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins

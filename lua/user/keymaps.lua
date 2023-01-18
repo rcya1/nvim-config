@@ -51,13 +51,7 @@ keymap("n", "<leader>$", "<cmd> lua require('bufferline').go_to_buffer(-1, true)
 keymap("i", "jk", "<ESC>", opts)
 
 -- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
-
 -- Move text up and down
-keymap("v", "<A-j>", ":m .+1<cr>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dp', opts)
 
 -- visual Block --
@@ -76,10 +70,10 @@ keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require
 keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Fix bufferline (doesn't work rn)
-keymap("n", "<F12>", ":source C:/Users/Ryan/AppData/Local/nvim/lua/user/bufferline.lua<CR>", { noremap = true, silent = false} )
+keymap("n", "<F12>", ":source C:/Users/chang/AppData/Local/nvim/lua/user/bufferline.lua<CR>", { noremap = true, silent = false} )
 
 -- Redo keymaps
-keymap("n", "<F1>", ":source C:/Users/Ryan/AppData/Local/nvim/lua/user/keymaps.lua<CR>", { noremap = true, silent = false })
+keymap("n", "<F1>", ":source C:/Users/chang/AppData/Local/nvim/lua/user/keymaps.lua<CR>", { noremap = true, silent = false })
 
 -- Disable whatever the heck this does --
 keymap("n", "<C-z>", "<Nop>", opts)
@@ -93,3 +87,12 @@ keymap("n", "<F6>", ":AsyncRun SumatraPDF %:r.pdf <CR>", { noremap = true, silen
 keymap("n", "<A-j>", "gj", opts)
 keymap("n", "<A-k>", "gk", opts)
 
+vim.cmd[[
+" Use Tab to expand and jump through snippets
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>' 
+smap <silent><expr> <Tab> luasnip#jumpable(1) ? '<Plug>luasnip-jump-next' : '<Tab>'
+
+" Use Shift-Tab to jump backwards through snippets
+imap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+smap <silent><expr> <S-Tab> luasnip#jumpable(-1) ? '<Plug>luasnip-jump-prev' : '<S-Tab>'
+]]
